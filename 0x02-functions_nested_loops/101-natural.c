@@ -7,13 +7,17 @@
 
 int main(void)
 {
-	int sumestion;
-	int number;
+	int var = 1;
+	int sumestion = 0;
 
-	for (number = 0; number < 1024; ++number)
+	while (var < 1024)
 	{
-		if ((number % 3 == 0) || (number % 5 == 0))
-			sumestion += number;
+		if (var % 3 == 0)
+			sumestion += var;
+		else if (var % 5 == 0)
+			sumestion += var;
+
+		var++;
 	}
 	printf("%d\n", sumestion);
 
