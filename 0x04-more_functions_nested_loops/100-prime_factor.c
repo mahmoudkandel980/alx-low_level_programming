@@ -11,7 +11,7 @@ int main(void)
 
 	varx = 612852475143;
 
-	for (vary = 2; varrx > vary; vary++)
+	for (vary = 2; varx > vary; vary++)
 	{
 		while (varx % vary == 0)
 		{
