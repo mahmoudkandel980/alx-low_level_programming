@@ -8,10 +8,10 @@
 int main(void)
 {
     char *str;
-    int len;
+    int y;
 
     str = "main!";
     len = _strlen(str);
-    printf("%d\n", len);
+    printf("%d\n", y);
     return (0);
 }
