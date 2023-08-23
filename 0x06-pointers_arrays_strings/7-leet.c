@@ -1,25 +1,35 @@
 #include "main.h"
 
 /**
-* leet - function
-*@str: string
-*Return: string
-*/
+  * leet - function
+  * @s: string
+  * Return: string
+  */
 
-char *leet(char *str)
+char *leet(char *s)
 {
 	int x = 0;
-	int y;
-	char z[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
+	int y = 0;
+	int z = 5;
+	char array1[5] = {'A', 'E', 'O', 'T', 'L'};
+	char array2[5] = {'4', '3', '0', '7', '1'};
 
-	while (str[++x])
+	while (s[x])
 	{
-		for (y = 0; y <= 7; y++)
+		y = 0;
+
+		while (y < z)
 		{
-			if (str[x] == z[y] ||
-			 str[x] - 32 == z[y])
-				str[x] = y + '0';
+			if (s[x] == array1[y] || s[x] - 32 == array1[y])
+			{
+				s[x] = array2[y];
+			}
+
+			y++;
 		}
+
+		x++;
 	}
-	return (str);
+
+	return (s);
 }
