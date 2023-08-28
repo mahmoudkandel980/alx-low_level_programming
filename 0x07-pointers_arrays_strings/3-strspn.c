@@ -14,8 +14,8 @@ int main(void)
     char *z;
 
     z = _strpbrk(x, y);
-    
+
     printf("%s\n", z);
-    
+
     return (0);
 }
