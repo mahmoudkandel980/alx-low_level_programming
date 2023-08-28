@@ -1,21 +1,28 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* _strspn - function
+* @s: character
+* @accept: character
+* Return: bytes from accept
+**/
 
-int main(void)
+unsigned int _strspn(char *s, char *accept)
 {
-    char *x = "hello, world";
-    char *y = "world";
-    char *z;
+	int x, y, z = 0;
 
-    z = _st;
-
-    printf("%s\n", z);
-
-    return (0);
+	for (x = 0; s[x] != '\0'; x++)
+	{
+		for (y = 0; accept[y] != '\0'; y++)
+		{
+			if (s[x] == accept[x])
+			{
+				z++;
+				break;
+			}
+		}
+		if (accept[y] == '\0')
+			return (z);
+	}
+	return (z);
 }
