@@ -1,21 +1,22 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_diagsums - function
- * @a: pointer to the first element of the matrix
- * @size: matrix size
- */
+* print_diagsums - function
+* @a: array
+* @size: array size
+**/
 
 void print_diagsums(int *a, int size)
 {
-	int x;
-	int sumOne = 0;
-	int sumTwo = 0;
+	int x, y;
+	int sumOne = 0, sumTwo = 0;
 
-	for (x = 0; x < size; x++)
-	{
-		sumOne += a[x * (size + 1)];
-		sumTwo += a[(x + 1) * (size - 1)];
-	}
+	for (x = 0; x < size * size; x += (size + 1))
+		sumOne += a[x];
+
+	for (y = size - 1; y < size * size - (size - 1); y += (size - 1))
+		sumTwo += a[y];
+
 	printf("%d, %d\n", sumOne, sumTwo);
 }
