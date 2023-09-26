@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 /**
- * pop_listint - deletes the head node
- * 
+ * pop_listint - deletes the head node of a listint_t linked list
  * @head: double
  *
  * Return: head
@@ -11,14 +10,19 @@
 
 int pop_listint(listint_t **head)
 {
-	listint_t *firstOne;
-	int x;
+	int n;
+	listint_t *first;
 
 	if (head == NULL || *head == NULL)
+	{
 		return (0);
-	firstOne = *head;
+	}
+
+	first = *head;
 	*head = first->next;
-	x = first->n;
-	free(firstOne);
-	return (x);
+	n = first->n;
+
+	free(first);
+	
+	return (n);
 }
