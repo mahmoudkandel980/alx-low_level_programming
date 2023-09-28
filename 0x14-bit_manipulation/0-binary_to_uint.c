@@ -10,31 +10,23 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int j;
-	unsigned int number;
+	unsigned int sum, pwr;
+	int length;
 
-	number = 0;
-	if (!b)
-	{
+	if (b == NULL)
 		return (0);
-	}
 
-	for (j = 0; b[j] != '\0'; j++)
+	for (length = 0; b[length]; length++)
 	{
-		if (b[j] != '0' && b[j] != '1')
-		{
+		if (b[length] != '0' && b[length] != '1')
 			return (0);
-		}
 	}
 
-	for (j = 0; b[j] != '\0'; j++)
+	for (pwr = 1, sum = 0, length--; length >= 0; length--, pwr *= 2)
 	{
-		number <<= 1;
-		if (b[j] == '1')
-		{
-			number += 1;
-		}
+		if (b[length] == '1')
+			sum += pwr;
 	}
-	
-	return (number);
+
+	return (sum);
 }
